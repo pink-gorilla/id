@@ -1,0 +1,27 @@
+{:paths ["src"]
+ :deps
+ {org.clojure/clojure    {:mvn/version "1.11.1"}
+  org.clojure/data.generators {:mvn/version "1.1.0"}
+  nano-id/nano-id {:mvn/version "1.1.0"}}
+ :aliases
+ {; github ci  
+  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                 slipset/deps-deploy {:mvn/version "0.2.1"}}
+          :ns-default build}
+
+  ; https://github.com/weavejester/cljfmt
+  :cljfmt
+  {:extra-deps {cljfmt/cljfmt {:mvn/version "RELEASE"}}
+   :main-opts ["-m" "cljfmt.main" "check" "--indents" "cljfmt.edn"]}
+  :cljfmt-fix
+  {:extra-deps {cljfmt/cljfmt {:mvn/version "RELEASE"}}
+   :main-opts ["-m" "cljfmt.main" "fix" "--indents" "cljfmt.edn"]}
+
+ ; https://github.com/clj-kondo/clj-kondo/blob/master/doc/jvm.md
+  :lint
+  {:extra-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}}
+   :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}
+
+
+;
+  }}
