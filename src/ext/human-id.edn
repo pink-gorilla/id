@@ -1,0 +1,5 @@
+{:name "human-id"
+  ; build
+ :lazy true
+ :cljs-namespace [human-id.core]
+ :cljs-ns-bindings {'human-id.core {'human-id human-id.core/human-id}}}
