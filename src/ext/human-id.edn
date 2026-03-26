@@ -1,5 +1,6 @@
-{:name "human-id"
+{:extension/name :human-id-sci
   ; build
- :lazy true
- :cljs-namespace [human-id.core]
- :cljs-ns-bindings {'human-id.core {'human-id human-id.core/human-id}}}
+ :cljs/when-defined :sci
+ :cljs/module :main
+ :cljs/namespace [human-id.core]
+ :cljs/ns-bindings {'human-id.core {'human-id human-id.core/human-id}}}
